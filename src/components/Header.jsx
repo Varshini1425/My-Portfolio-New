@@ -15,14 +15,15 @@ const Header = ({ darkMode, setDarkMode }) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-bgAnotherWhite dark:bg-bgColor shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <motion.h1
+        <motion.a
           className="text-2xl font-bold font-orbitron text-textColorTeal dark:text-accentColor"
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
+          href="/"
         >
           SwarnaVarshini
-        </motion.h1>
+        </motion.a>
         <nav className="hidden md:block">
           <ul className="flex space-x-4">
             {navItems.map((item) => (
@@ -33,7 +34,7 @@ const Header = ({ darkMode, setDarkMode }) => {
               >
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className="text-bgColor dark:text-textColor hover:text-accentColor"
+                  className="text-bgColor dark:text-textColor hover:text-textColorTeal dark:hover:text-accentColor"
                 >
                   {item}
                 </a>
