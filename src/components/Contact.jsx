@@ -14,6 +14,8 @@ const Contact = () => {
           Contact Me
         </motion.h2>
         <motion.form
+          action="https://getform.io/f/aejjlryb"
+          method="POST"
           className="max-w-md mx-auto"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -21,15 +23,18 @@ const Contact = () => {
         >
           <input
             type="text"
+            name="name"
             placeholder="Name"
             className="w-full mb-4 p-2 rounded bg-bgAnotherWhite dark:bg-tertiaryColor text-slate-600 dark:text-textColor"
           />
           <input
             type="email"
+            name="email"
             placeholder="Email"
             className="w-full mb-4 p-2 rounded bg-bgAnotherWhite dark:bg-tertiaryColor text-slate-600 dark:text-textColor"
           />
           <textarea
+          name="message"
             placeholder="Message"
             rows="4"
             className="w-full mb-4 p-2 rounded bg-bgAnotherWhite dark:bg-tertiaryColor text-slate-600 dark:text-textColor"

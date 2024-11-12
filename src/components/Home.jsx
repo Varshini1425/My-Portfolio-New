@@ -21,13 +21,14 @@ const Home = () => {
           and JavaScript. Passionate about crafting efficient, user-centric web
           experiences.
         </p>
-        <motion.button
+        <motion.a
           className="bg-textColorTeal dark:bg-accentColor text-slate-200 dark:text-tertiaryColor px-6 py-3 rounded-full text-lg hover:bg-opacity-80 transition-colors"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          href="/#about"
         >
           Learn More
-        </motion.button>
+        </motion.a>
       </motion.div>
     </section>
   );
