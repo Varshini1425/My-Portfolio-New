@@ -1,3 +1,5 @@
+// Skills.js
+
 import React from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,15 +10,37 @@ import {
   faHtml5,
   faNodeJs,
   faGitAlt,
+  faGithub,
+  faSass,
+  faNpm,
 } from "@fortawesome/free-brands-svg-icons";
 
+import {
+  SiTypescript,
+  SiRedux,
+  SiJest,
+  SiReactrouter,
+  SiGraphql,
+  SiWebpack,
+  SiFirebase,
+} from "react-icons/si";
+
 const skills = [
-  { name: "React", icon: faReact },
-  { name: "JavaScript", icon: faJs },
-  { name: "CSS", icon: faCss3 },
-  { name: "HTML", icon: faHtml5 },
-  { name: "Node.js", icon: faNodeJs },
-  { name: "Git", icon: faGitAlt },
+  { name: "React", icon: faReact, library: "fontawesome" },
+  { name: "JavaScript", icon: faJs, library: "fontawesome" },
+  { name: "CSS", icon: faCss3, library: "fontawesome" },
+  { name: "HTML", icon: faHtml5, library: "fontawesome" },
+  { name: "Node.js", icon: faNodeJs, library: "fontawesome" },
+  { name: "Git", icon: faGitAlt, library: "fontawesome" },
+  { name: "GitHub", icon: faGithub, library: "fontawesome" },
+  { name: "TypeScript", icon: <SiTypescript />, library: "react-icons" },
+  { name: "Redux", icon: <SiRedux />, library: "react-icons" },
+  { name: "Sass", icon: faSass, library: "fontawesome" },
+  { name: "Webpack", icon: <SiWebpack />, library: "react-icons" },
+  { name: "Firebase", icon: <SiFirebase />, library: "react-icons" },
+  { name: "Jest", icon: <SiJest />, library: "react-icons" },
+  { name: "React Router", icon: <SiReactrouter />, library: "react-icons" },
+  { name: "GraphQL", icon: <SiGraphql />, library: "react-icons" },
 ];
 
 const Skills = () => {
@@ -34,11 +58,11 @@ const Skills = () => {
         >
           My Skills
         </motion.h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 cursor-pointer">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 cursor-pointer">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              className="bg-bgAnotherWhite dark:bg-tertiaryColor p-4 rounded-lg text-center"
+              className="bg-bgAnotherWhite dark:bg-tertiaryColor p-6 rounded-lg text-center flex flex-col items-center justify-center "
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               whileHover={{
@@ -47,12 +71,16 @@ const Skills = () => {
                   ? "3px 10px 15px rgba(60, 255, 218, 0.3)" // Dark mode accent color shadow
                   : "3px 10px 15px rgba(90 , 150, 151, 0.3)", // Light mode teal color shadow
               }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5 }}
             >
-              <FontAwesomeIcon
-                icon={skill.icon}
-                className="text-4xl mb-2 text-textColorTeal dark:text-accentColor"
-              />
+              {/* Conditionally render icon based on library */}
+              <div className="text-4xl mb-2 text-textColorTeal dark:text-accentColor h-12 w-12 flex items-center justify-center">
+                {skill.library === "fontawesome" ? (
+                  <FontAwesomeIcon icon={skill.icon} />
+                ) : (
+                  skill.icon
+                )}
+              </div>
               <p className="text-sm text-slate-600 dark:text-textColor">
                 {skill.name}
               </p>

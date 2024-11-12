@@ -14,12 +14,13 @@ const Home = () => {
         transition={{ duration: 0.5 }}
       >
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-textColorTeal dark:text-accentColor">
-          Welcome to My Portfolio
+          Web Developer
         </h1>
-        <p className="text-xl mb-8 text-gray-600 dark:text-textColor">
-          Front-end Developer with 2+ years of experience, specializing in React
-          and JavaScript. Passionate about crafting efficient, user-centric web
-          experiences.
+        <p className="text-xl mb-8 text-gray-600 dark:text-textColor text-center  md:px-24 px-10">
+          As a Front-End Engineer, I create intuitive, responsive web
+          applications that prioritize user experience and performance.
+          Leveraging my expertise in React, JavaScript, and modern front-end
+          technologies, I turn ideas into seamless digital experiences.
         </p>
         <motion.a
           className="bg-textColorTeal dark:bg-accentColor text-slate-200 dark:text-tertiaryColor px-6 py-3 rounded-full text-lg hover:bg-opacity-80 transition-colors"

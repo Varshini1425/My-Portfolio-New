@@ -33,12 +33,13 @@ const About = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Dedicated Software Engineer with over 2 years of experience in
-              Front-end Development, specializing in JavaScript and React.
-              Skilled in optimizing user interfaces and enhancing web
-              performance, with hands-on experience in leading integration
-              projects. Seeking a challenging role to apply my technical
-              expertise and contribute to organizational growth.
+              I’m a Front-End Engineer who believes in the power of continuous
+              learning to fuel innovation. With a background in React,
+              JavaScript, and responsive design, I constantly explore new
+              techniques and technologies to improve my craft. My passion lies
+              in building applications that are as performant as they are
+              user-friendly, always aiming to enhance the experience of every
+              user who interacts with my work.
             </motion.p>
 
             {/* Resume Download Button below the paragraph */}
