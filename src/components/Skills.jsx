@@ -48,7 +48,7 @@ const Skills = () => {
   const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-bgColor">
+    <section id="skills" className="py-20 bg-bgAnotherWhite dark:bg-tertiaryColor">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-3xl font-bold mb-8 text-center text-textColorTeal dark:text-accentColor"
@@ -62,7 +62,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              className="bg-bgAnotherWhite dark:bg-tertiaryColor p-6 rounded-lg text-center flex flex-col items-center justify-center "
+              className="bg-white dark:bg-bgColor p-6 rounded-lg text-center flex flex-col items-center justify-center "
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               whileHover={{

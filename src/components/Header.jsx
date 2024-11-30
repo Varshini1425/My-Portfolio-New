@@ -10,7 +10,7 @@ import {
 
 const Header = ({ darkMode, setDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navItems = ["Home", "About", "Skills", "Projects", "Contact"];
+  const navItems = ["Home", "About", "Experience", "Skills", "Projects", "Contact"];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-bgAnotherWhite dark:bg-bgColor shadow-md">
