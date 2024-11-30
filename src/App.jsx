@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ParticlesBackground from "./components/ParticlesBackground";
 import Experience from "./components/Experience";
+import Education from "./components/Education";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -31,6 +32,7 @@ function App() {
         <About />
         <Experience/>
         <Skills />
+        <Education/>
         <Projects />
         <Contact />
       </motion.main>
