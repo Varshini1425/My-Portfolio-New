@@ -7,6 +7,7 @@ import {
   faBars,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
+import { IoArrowUpSharp } from "react-icons/io5";
 
 const Header = ({ darkMode, setDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -79,6 +80,13 @@ const Header = ({ darkMode, setDarkMode }) => {
           </ul>
         </motion.div>
       )}
+
+      <div>
+        <a className="fixed bottom-8 right-6 z-50 flex items-center justify-center w-9 h-9 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-accentColor to-textColorTeal p-3 sm:p-4 text-white hover:scale-110 hover:shadow-lg transition-all duration-300 ease-out"
+        href="/">
+        <IoArrowUpSharp   className="w-5 h-5 sm:w-6 sm:h-6"/>
+        </a>
+      </div>
     </header>
   );
 };
