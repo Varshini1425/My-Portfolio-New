@@ -19,7 +19,12 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className={`flex flex-col min-h-screen ${darkMode ? "dark" : ""}`}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className={`flex flex-col min-h-screen ${darkMode ? "dark" : ""}`}
+    >
       <ParticlesBackground darkMode={darkMode} />
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <motion.main
@@ -30,14 +35,15 @@ function App() {
       >
         <Home />
         <About />
-        <Experience/>
+        <Experience />
         <Skills />
-        <Education/>
+        <Education />
         <Projects />
         <Contact />
       </motion.main>
       <Footer />
-    </div>
+    </motion.div>
+  
   );
 }
 

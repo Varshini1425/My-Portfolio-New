@@ -11,10 +11,10 @@ import { IoArrowUpSharp } from "react-icons/io5";
 
 const Header = ({ darkMode, setDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navItems = ["Home", "About", "Experience", "Skills", "Projects", "Contact"];
+  const navItems = ["Home", "About", "Experience", "Skills","Education", "Projects", "Contact"];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-bgAnotherWhite dark:bg-bgColor shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-bgAnotherWhite dark:bg-bgColor opacity-90 shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <motion.a
           className="text-2xl font-bold font-orbitron text-textColorTeal dark:text-accentColor"
@@ -35,7 +35,7 @@ const Header = ({ darkMode, setDarkMode }) => {
               >
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className="text-bgColor dark:text-textColor hover:text-textColorTeal dark:hover:text-accentColor"
+                  className="text-bgColor text-sm dark:text-textColor hover:text-textColorTeal dark:hover:text-accentColor"
                 >
                   {item}
                 </a>

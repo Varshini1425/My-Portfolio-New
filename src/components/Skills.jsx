@@ -1,6 +1,4 @@
-// Skills.js
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,7 +10,6 @@ import {
   faGitAlt,
   faGithub,
   faSass,
-  faNpm,
 } from "@fortawesome/free-brands-svg-icons";
 
 import {
@@ -44,11 +41,27 @@ const skills = [
 ];
 
 const Skills = () => {
-  // Determine dark mode using media query or context
   const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+  const [scrollX, setScrollX] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if(isHovered) return;
+    const interval = setInterval(() => {
+      setScrollX((prev) => (prev -2 ) % (skills.length * 200)); // Adjust scroll speed and reset logic
+    }, 30); // Animation smoothness interval
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
+  const repeatedSkills = [...skills, ...skills];
+ 
+
   return (
-    <section id="skills" className="py-20 bg-bgAnotherWhite dark:bg-tertiaryColor">
+    <section
+      id="skills"
+      className="py-20 bg-bgAnotherWhite dark:bg-tertiaryColor overflow-hidden"
+    >
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-3xl font-bold mb-8 text-center text-textColorTeal dark:text-accentColor"
@@ -58,22 +71,28 @@ const Skills = () => {
         >
           My Skills
         </motion.h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 cursor-pointer">
-          {skills.map((skill, index) => (
+        <motion.div
+          className="flex space-x-4"
+          style={{
+            transform: `translateX(${scrollX}px)`,
+          }}
+          animate={{ x: scrollX }}
+          transition={{ ease: "linear", duration: 0.2 }}
+        >
+          {repeatedSkills.map((skill, index) => (
             <motion.div
-              key={skill.name}
-              className="bg-white dark:bg-bgColor p-6 rounded-lg text-center flex flex-col items-center justify-center "
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+            key={`${skill.name}-${index}`}
+              className="bg-white dark:bg-bgColor p-6 rounded-lg text-center flex flex-col items-center justify-center flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/5"
               whileHover={{
                 scale: 1.05,
                 boxShadow: isDarkMode
                   ? "3px 10px 15px rgba(60, 255, 218, 0.3)" // Dark mode accent color shadow
-                  : "3px 10px 15px rgba(90 , 150, 151, 0.3)", // Light mode teal color shadow
+                  : "3px 10px 15px rgba(90, 150, 151, 0.3)", // Light mode teal color shadow
               }}
               transition={{ duration: 0.5 }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
-              {/* Conditionally render icon based on library */}
               <div className="text-4xl mb-2 text-textColorTeal dark:text-accentColor h-12 w-12 flex items-center justify-center">
                 {skill.library === "fontawesome" ? (
                   <FontAwesomeIcon icon={skill.icon} />
@@ -86,7 +105,7 @@ const Skills = () => {
               </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
