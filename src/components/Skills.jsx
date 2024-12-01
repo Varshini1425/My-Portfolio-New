@@ -49,7 +49,7 @@ const Skills = () => {
   useEffect(() => {
     if(isHovered) return;
     const interval = setInterval(() => {
-      setScrollX((prev) => (prev -2 ) % (skills.length * 200)); // Adjust scroll speed and reset logic
+      setScrollX((prev) => (prev - 1 ) % (skills.length * 200)); // Adjust scroll speed and reset logic
     }, 30); // Animation smoothness interval
     return () => clearInterval(interval);
   }, [isHovered]);
@@ -67,7 +67,7 @@ const Skills = () => {
           className="text-3xl font-bold mb-8 text-center text-textColorTeal dark:text-accentColor"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1 }}
         >
           My Skills
         </motion.h2>
