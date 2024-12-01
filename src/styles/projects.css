@@ -1,0 +1,27 @@
+.project-card {
+    width: 100%;
+    height: 300px; /* Ensure consistent card height */
+  }
+  
+  .project-thumbnail {
+    width: 100%;
+    height: 200px; /* Adjust image height as needed */
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+    border-radius: 8px;
+  }
+  
+  .project-card img {
+    transition: transform 1s ease-in-out;
+  }
+  
+  .project-card img:hover {
+    transform: scale(1.05); /* Optional: Slight zoom effect on hover */
+  }
+  
+  @media (max-width: 768px) {
+    /* Stack effect for small screens */
+    .project-card {
+      margin-bottom: 20px;
+    }
+  }
+  
